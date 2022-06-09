@@ -17,11 +17,16 @@ public class PlayerController : MonoBehaviour
 
     [Header("Jump Settings")]
     [SerializeField] private float _jumpHeight = 10f;
-    [SerializeField] private float _inAirControl = 0.1f;
-    [SerializeField] private float _assistForce = 10f;
     [SerializeField] private float _jumpBuffer = 0.1f;
     private float _jumpBufferTime;
-    public bool _canJump;
+    private bool _canJump;
+
+    [Header("Head Bob Settings")]
+    [SerializeField] private bool _useHeadBob;
+    [SerializeField] private float _bobSpeed = 10f;
+    [SerializeField] private float _bobAmount = 0.05f;
+    [SerializeField] private Transform _head;
+    private float _bobTimer, _defaultYPos;
 
     [Header("Checks")]
     [SerializeField] private LayerMask _whatIsGround;
@@ -33,6 +38,8 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _controller = new PlayerInput();
         _collider = GetComponent<CapsuleCollider>();
+
+        _defaultYPos = _head.transform.localPosition.y;
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -49,6 +56,7 @@ public class PlayerController : MonoBehaviour
         
         Camera();
         JumpBuffer();
+        HeadBob();
     }
 
     private void FixedUpdate()
@@ -83,6 +91,18 @@ public class PlayerController : MonoBehaviour
         {
             _jumpBufferTime -= Time.deltaTime;
         }
+    }
+
+    private void HeadBob()
+    {
+        if (_input == Vector2.zero || !_useHeadBob || !IsGrounded()) return;
+
+        if (Mathf.Abs(_rb.velocity.x) != 0f || Mathf.Abs(_rb.velocity.z) != 0f)
+        {
+            _bobTimer += Time.deltaTime * _bobSpeed;
+            _head.transform.localPosition = new Vector3(_head.transform.localPosition.x, _defaultYPos + Mathf.Sin(_bobTimer) * _bobAmount, _head.transform.localPosition.z);
+        }
+        else _head.transform.localPosition = new Vector3(_head.transform.localPosition.x, _defaultYPos, _head.transform.localPosition.z);
     }
 
     private void Camera()
