@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Interactions : MonoBehaviour
 {
-
     private PlayerInput _input;
+    public Dialogue alien;
 
     [SerializeField] private Camera _camera;
     [SerializeField] private float _viewDst = 5f;
+    [SerializeField] private float _radius = 0.25f;
 
     private void Awake()
     {
         _input = new PlayerInput();
     }
-
 
     void Update()
     {
@@ -25,14 +25,20 @@ public class Interactions : MonoBehaviour
     {
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * _viewDst, Color.green);
 
-        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, _viewDst))
+        if (Physics.SphereCast(_camera.transform.position, _radius, _camera.transform.forward, out RaycastHit hit, _viewDst))
         {
-            if (hit.transform.gameObject.TryGetComponent<Interacable>(out _))
+            if (hit.transform.gameObject.TryGetComponent<Dialogue>(out Dialogue info))
             {
-                print("hit");
+                alien = info;
+                alien._on = true;
+                print(hit.transform.gameObject.name);
+            }
+            else
+            {
+                if (alien != null)
+                    alien._on = false;
             }
         }
-
     }
 
     private RaycastHit CastRay()
