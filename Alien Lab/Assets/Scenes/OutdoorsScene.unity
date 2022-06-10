@@ -16236,7 +16236,7 @@ MonoBehaviour:
   alien: {fileID: 0}
   _camera: {fileID: 33245307}
   _viewDst: 5
-  _radius: 0.25
+  _radius: 1
 --- !u!1 &1404104232
 GameObject:
   m_ObjectHideFlags: 0
@@ -16358,12 +16358,6 @@ MonoBehaviour:
   - ...
   - Are you here to continue our cultivation efforts?
   - ... What a fascinating creature you are...
-  _timer: 0
-  _screenTimer: 0
-  _spawnTimer: 0
-  _delay: 0
-  spawn: 0
-  show: 0
 --- !u!64 &1428326773
 MeshCollider:
   m_ObjectHideFlags: 0
