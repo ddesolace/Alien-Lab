@@ -41,13 +41,6 @@ public class Interactions : MonoBehaviour
         }
     }
 
-    private RaycastHit CastRay()
-    {
-        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
-
-        return hit;
-    }
-
     private void OnEnable()
     {
         _input.Enable();

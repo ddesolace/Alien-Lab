@@ -17,9 +17,9 @@ public class Dialogue : MonoBehaviour
     [TextArea(3,10)]
     public string[] dialogueText;
 
-    public float _timer, _screenTimer, _spawnTimer;
+    private float _timer, _screenTimer, _spawnTimer;
     private readonly float _maxTime = 2f;
-    public bool _delay, spawn, show;
+    private bool _delay, spawn, show;
     private int number = 0;
     
     private void Awake()
@@ -61,6 +61,15 @@ public class Dialogue : MonoBehaviour
         if (_timer < 0f)
         {
             show = true;
+
+            if (number >= dialogueText.Length - 1)
+            {
+                number = 0;
+            }
+            else number++;
+
+            _image.text = dialogueText[number];
+            ResetValues();
         }
     }
 
@@ -71,24 +80,13 @@ public class Dialogue : MonoBehaviour
         show = false;
         spawn = true;
         _delay = true;
-
-        if (_timer <= 0f)
-        {
-            if (number >= dialogueText.Length-1)
-            {
-                number = 0;
-            } 
-            else number++;
-
-            _image.text = dialogueText[number];
-            ResetValues();
-        }
     }
 
     private void ResetValues()
     {
         _on = false;
         spawn = false;
+        _delay = false;
 
         _timer = _maxTime;
         _spawnTimer = _maxTime;
