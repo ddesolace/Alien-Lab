@@ -14,6 +14,7 @@ public class Interactions : MonoBehaviour
     private void Awake()
     {
         _input = new PlayerInput();
+
     }
 
     void Update()
@@ -31,7 +32,6 @@ public class Interactions : MonoBehaviour
             {
                 alien = info;
                 alien._on = true;
-                print(hit.transform.gameObject.name);
             }
             else
             {

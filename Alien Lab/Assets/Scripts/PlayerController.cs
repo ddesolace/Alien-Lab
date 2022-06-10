@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     [Header("Checks")]
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private float _groundCheckRadius = 0.25f;
-    [SerializeField] private float _checkForWallDistance = 2f;
 
     private void Awake()
     {

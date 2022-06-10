@@ -988,14 +988,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49890197}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.2056198, y: -2.3335273, z: -17.421495}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1428326771}
-  m_Father: {fileID: 2021950350}
-  m_RootOrder: 4
+  m_Father: {fileID: 853300293}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &56568007 stripped
 Transform:
@@ -1370,10 +1370,10 @@ RectTransform:
   m_Father: {fileID: 1065322355}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.0227, y: 0.1372}
-  m_SizeDelta: {x: 816.771, y: 469.0169}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &123026242 stripped
 Transform:
@@ -1771,6 +1771,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ae4c2c9201b0e947a7c4be0f0c945e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1446476375835352658, guid: 1ae4c2c9201b0e947a7c4be0f0c945e4,
         type: 3}
       propertyPath: m_Layer
@@ -2094,7 +2099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1.0227, y: 17.543}
+  m_AnchoredPosition: {x: -1.0227, y: 17.542969}
   m_SizeDelta: {x: 357.1655, y: 35.086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165484828
@@ -4113,6 +4118,86 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8e66c68a9792f749a68334b9aeb84b4, type: 3}
+--- !u!1 &476694306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476694307}
+  - component: {fileID: 476694309}
+  - component: {fileID: 476694308}
+  m_Layer: 5
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &476694307
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476694306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065322355}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.000013351, y: 103.5}
+  m_SizeDelta: {x: 200.0435, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &476694308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476694306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: The Alien says some things...
+--- !u!222 &476694309
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476694306}
+  m_CullTransparentMesh: 1
 --- !u!4 &484192302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f92223cc3ff5d214181fa32410f44061,
@@ -6474,6 +6559,7 @@ Transform:
   - {fileID: 2036850378}
   - {fileID: 1878159023}
   - {fileID: 2021950350}
+  - {fileID: 49890198}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13351,7 +13437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 2
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -13397,6 +13483,7 @@ RectTransform:
   m_Children:
   - {fileID: 165484827}
   - {fileID: 115826583}
+  - {fileID: 476694307}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15834,7 +15921,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _groundCheckRadius: 0.25
-  _checkForWallDistance: 2
 --- !u!114 &1399928747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15959,7 +16045,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _on: 0
-  _Canvas: {fileID: 2052754122}
+  _Canvas: {fileID: 770248767}
+  _Text: {fileID: 476694306}
+  _image: {fileID: 476694308}
+  ScreenTime: 3
+  SpawnSpeed: 1
+  dialogueText:
+  - 'Hello, Andrea '
+  - Goodbye, Andrea
 --- !u!64 &1428326773
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20333,7 +20426,6 @@ Transform:
   - {fileID: 1329001047}
   - {fileID: 649463464}
   - {fileID: 1404104233}
-  - {fileID: 49890198}
   m_Father: {fileID: 853300293}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20626,7 +20718,7 @@ GameObject:
   - component: {fileID: 2052754125}
   - component: {fileID: 2052754124}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
